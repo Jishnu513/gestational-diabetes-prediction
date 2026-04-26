@@ -28,19 +28,19 @@ Predicts gestational diabetes risk using 6 maternal health indicators with 94.6%
 
 ## 🚀 Quick Start
 
-### Train the model:
+### Install Dependencies:
+```bash
+pip install -r requirements.txt
+```
+
+### Run the Interactive Web Application:
+```bash
+python -m streamlit run app.py
+```
+
+### Train the model (Optional, model is already provided):
 ```bash
 python train_model.py
-```
-
-### Make predictions:
-```bash
-python predict.py
-```
-
-### Compare all models:
-```bash
-python compare_models.py
 ```
 
 ## 📊 Dataset Features
@@ -104,13 +104,13 @@ Pipeline([
 - **SHAP Explainability**: Transparent predictions for clinical use
 - **Optimized Hyperparameters**: Systematic tuning for best performance
 - **Production Pipeline**: StandardScaler + XGBoost for consistent preprocessing
-- **Interactive Predictions**: CLI interface for real-time risk assessment
+- **Interactive Predictions**: Beautiful Streamlit web interface for real-time risk assessment and SHAP visualization
 
 ## 📁 Project Structure
 ```
-├── train_model.py          # Main training script
-├── predict.py              # Interactive prediction
-├── compare_models.py       # Multi-model comparison
+├── app.py                  # Main Streamlit Web Application
+├── train_model.py          # Model training & evaluation script
+├── gdm_model.pkl           # Pre-trained XGBoost Model
 ├── requirements.txt        # Dependencies
 ├── data/
 │   └── Gestational_Diabetes.csv
@@ -160,7 +160,7 @@ print(f"Confidence: {probability[prediction]*100:.1f}%")
 
 ## 🚀 Future Enhancements
 
-- [ ] Web interface with Flask/Streamlit
+- [x] Web interface with Flask/Streamlit (Completed)
 - [ ] REST API for production deployment
 - [ ] Cross-validation for robust estimates
 - [ ] Additional features (glucose levels, blood pressure)
